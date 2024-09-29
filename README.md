@@ -45,10 +45,11 @@ export default [
   * Встановіть пакет @faker-js/faker для генерації мокових даних за допомогою команди npm i -D @faker-js/faker.
     
 7. Створіть в проєкті структуру згідно наданого прикладу:
+  [(https://monosnap.com/file/5MH4bAm4ChZG2PFmFguAohge2LOedv)]
 
-8. В файлі src/constants/products.js оголосіть змінну PATH_DB. Ініціалізуйте її значенням, яке буде зберігати шлях до файлу src/db/db.json.
+9. В файлі src/constants/products.js оголосіть змінну PATH_DB. Ініціалізуйте її значенням, яке буде зберігати шлях до файлу src/db/db.json.
 
-9. В файл createFakeProduct.js додайте наступний вміст:
+10. В файл createFakeProduct.js додайте наступний вміст:
 ```js
    
    import { faker } from "@faker-js/faker";

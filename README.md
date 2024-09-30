@@ -1,6 +1,6 @@
 # blended1.node.js
 
-1. Створіть новий  репозиторій на github.com, оберіть .gitignore (node).
+1. Створіть новий репозиторій на github.com, оберіть .gitignore (node).
 
 2. Додайте захист на гілку main "Require a pull request before merging" і увімкніть опцію'' "Automatically delete head branches".
 
@@ -10,49 +10,52 @@
 
 5. Виконайте стартові налаштування вашого проєкту:
 
-   * Створіть package.json файл за допомогою команди npm init -y. Додайте до нього властивість "type": "module".
+   - Створіть package.json файл за допомогою команди npm init -y. Додайте до нього властивість "type": "module".
 
-   * Встановіть npm пакет eslint командою npm init @eslint/config@latest та в файлі налаштувань eslint.config.js вкажіть наступний вміст:
+   - Встановіть npm пакет eslint командою npm init @eslint/config@latest та в файлі налаштувань eslint.config.js вкажіть наступний вміст:
 
-  ``` js
- import globals from "globals";
-import pluginJs from "@eslint/js";
+```js
+import globals from 'globals';
+import pluginJs from '@eslint/js';
 
 export default [
   pluginJs.configs.recommended,
   {
-    files: ["src/**/*.js"],
+    files: ['src/**/*.js'],
     languageOptions: { globals: globals.node },
     rules: {
-      semi: "error",
-      "no-unused-vars": "off",
-      "no-undef": "error",
+      semi: 'error',
+      'no-unused-vars': 'off',
+      'no-undef': 'error',
     },
   },
 ];
 ```
-  * В корні проєкту створіть файл .prettierrc з наступним вмістом:
- ``` js
+
+- В корні проєкту створіть файл .prettierrc з наступним вмістом:
+
+```js
 {
-  "semi": true,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "printWidth": 80
+ "semi": true,
+ "singleQuote": true,
+ "trailingComma": "all",
+ "printWidth": 80
 }
 ```
-  * Переконайтесь, що в файлі .gitignore в виключеннях є папка /node_modules.
 
-  * Встановіть пакет @faker-js/faker для генерації мокових даних за допомогою команди npm i -D @faker-js/faker.
-    
+- Переконайтесь, що в файлі .gitignore в виключеннях є папка /node_modules.
+
+- Встановіть пакет @faker-js/faker для генерації мокових даних за допомогою команди npm i -D @faker-js/faker.
+
 7. Створіть в проєкті структуру згідно наданого прикладу:
-  [(https://monosnap.com/file/5MH4bAm4ChZG2PFmFguAohge2LOedv)]
+   [(https://monosnap.com/file/5MH4bAm4ChZG2PFmFguAohge2LOedv)]
 
-9. В файлі src/constants/products.js оголосіть змінну PATH_DB. Ініціалізуйте її значенням, яке буде зберігати шлях до файлу src/db/db.json.
+8. В файлі src/constants/products.js оголосіть змінну PATH_DB. Ініціалізуйте її значенням, яке буде зберігати шлях до файлу src/db/db.json.
 
-10. В файл createFakeProduct.js додайте наступний вміст:
+9. В файл createFakeProduct.js додайте наступний вміст:
+
 ```js
-   
-   import { faker } from "@faker-js/faker";
+import { faker } from '@faker-js/faker';
 export const createFakeProduct = () => ({
   name: faker.commerce.productName(),
   price: faker.commerce.price(),
@@ -60,6 +63,7 @@ export const createFakeProduct = () => ({
   description: faker.commerce.productDescription(),
 });
 ```
+
 TASK 2
 
 Створіть файл src/scripts/generateProducts.js.
@@ -99,7 +103,5 @@ TASK 7
 
 Створіть файл src/scripts/removeRandomProduct.js.
 В ньому опишіть функцію removeRandomProduct. Вона має видалити один випадковий продукт з масиву у файлі src/db/db.json.
-Додайте до файлу package.json скрипт remove-random для виконання коду з файлу src/scripts/removeRandomProduct.js.
+Додайте до файлу package.json скрипт remove-random для виконання коду з файлу src/scripts/removeRandomProduct.js
 Виконавши скрипт remove-random, переконайтесь, що ваша функція removeRandomProduct коректно працює.
-    
-

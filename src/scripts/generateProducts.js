@@ -4,12 +4,12 @@ import { readProducts } from '../utils/readProducts.js';
 
 export const generateProducts = async (number) => {
   try {
-    const existingproducts = await readProducts();
+    const existingProducts = await readProducts();
     const newProducts = [];
     for (let i = 0; i < number; i++) {
       newProducts.push(createFakeProduct());
     }
-    const updatedProducts = [...existingproducts, ...newProducts];
+    const updatedProducts = [...existingProducts, ...newProducts];
     await writeProducts(updatedProducts);
     console.log(`Successfully generated and added ${number} products.`);
   } catch (error) {
@@ -17,4 +17,4 @@ export const generateProducts = async (number) => {
   }
 };
 
-generateProducts(5);
+generateProducts(3);
